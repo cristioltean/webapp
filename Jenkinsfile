@@ -1,6 +1,6 @@
 pipeline {
     agent any
-    environmeent {
+    environment {
          DOCKER_IMAGE_NAME = "coltean/webapp"
     }
     stages{
