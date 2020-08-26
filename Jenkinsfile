@@ -24,5 +24,15 @@ pipeline {
                 }
             }
         }
+        stage('Deploy to Kubernetes'){
+            steps {
+                kubernetesDeploy(
+                    kubeconfigId: 'kubeconfig',
+                    configs: 'deploy-webapp.yml',
+                    enableConfigSubstitution: true
+                )
+
+            }
+        }
     }    
 }
